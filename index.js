@@ -40,49 +40,12 @@ restService.post("/echo", function(req, res) {
     payload: speechResponse,
     //data: speechResponse,
     fulfillmentText: speech,
-    //speech: speech,
-    //displayText: speech,
+  //  speech: speech,
+   // displayText: speech,
     //source: "webhook-echo-sample"
   });
 });
 
-restService.post("/numFact", function(req, res) {
-  var speech = "";
-  switch (req.body.queryResult.parameters.numFact()) {
-    //Speech Synthesis Markup Language 
-    case "10":
-      speech =
-        'tiene facturas pendientes';
-      break;
-       case "20":
-      speech =
-        'No tiene facturas';
-      break;
-  
-  var speechResponse = {
-    google: {
-      expectUserResponse: true,
-      richResponse: {
-        items: [
-          {
-            simpleResponse: {
-              textToSpeech: speech
-            }
-          }
-        ]
-      }
-    }
-  };
-  
-  return res.json({
-    payload: speechResponse,
-    //data: speechResponse,
-    fulfillmentText: speech,
-    //speech: speech,
-    //displayText: speech,
-    //source: "webhook-echo-sample"
-  });
-});
 restService.post("/audio", function(req, res) {
   var speech = "";
   switch (req.body.result.parameters.AudioSample.toLowerCase()) {
