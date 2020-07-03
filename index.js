@@ -21,6 +21,18 @@ restService.post("/echo", function(req, res) {
       ? req.body.queryResult.parameters.echoText
       : "Seems like some problem. Speak again.";
   
+
+	switch (speech) {
+	case "hola":
+		speech = "nada"
+		break;
+	default:
+		speech = speech
+		break;
+	}
+
+
+
   var speechResponse = {
     google: {
       expectUserResponse: true,
@@ -28,16 +40,7 @@ restService.post("/echo", function(req, res) {
         items: [
           {
             simpleResponse: {
-				switch (speech) {
-				case "hola":
-				speech = "nada"
-				break;
-				default:
-				speech
-				[break;]
-				}
-
-			  textToSpeech: speech
+              textToSpeech: speech
             }
           }
         ]
