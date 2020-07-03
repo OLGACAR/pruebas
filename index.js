@@ -25,9 +25,7 @@ restService.post("/echo", function(req, res) {
 	switch (speech) {
 	case "hola":
 		speech = 
-			"Fecha: 4/8/2020, IdFact: 3, Valor: $13,000.00,
-			Fecha: 4/20/2020, IdFact: 1, Valor: $120,000.00,
-			Fecha: 4/20/2020, IdFact: 4, Valor: $133,000.00"
+			'Fecha: 4/8/2020, IdFact: 3, Valor: $13,000.00 - Fecha: 4/20/2020, IdFact: 1, Valor: $120,000.00 - 	Fecha: 4/20/2020, IdFact: 4, Valor: $133,000.00'
 		break;
 	default:
 		speech = speech
