@@ -32,6 +32,30 @@ restService.post("/echo", function(req, res) {
 		break;
 	}
 
+
+
+  var speechResponse = {
+    google: {
+      expectUserResponse: true,
+      richResponse: {
+        items: [
+          {
+            simpleResponse: {
+              textToSpeech: speech
+            }
+          }
+        ]
+      }
+    }
+  };
+  
+  return res.json({
+    payload: speechResponse,
+    fulfillmentText: speech,
+  });
+});
+
+
 restService.listen(process.env.PORT || 8000, function() {
   console.log("Server up and listening");
 });
