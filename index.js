@@ -28,7 +28,16 @@ restService.post("/echo", function(req, res) {
         items: [
           {
             simpleResponse: {
-              textToSpeech: speech
+				switch (speech) {
+				case "hola":
+				speech = "nada"
+				break;
+				default:
+				speech
+				[break;]
+				}
+
+			  textToSpeech: speech
             }
           }
         ]
