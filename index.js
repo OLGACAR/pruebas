@@ -14,37 +14,24 @@ restService.use(
 restService.use(bodyParser.json());
 
 restService.post("/echo", function(req, res) {
-  var speech =
-    req.body.queryResult &&
-    req.body.queryResult.parameters &&
-    req.body.queryResult.parameters.echoText
-      ? req.body.queryResult.parameters.echoText
-      : "Prueba respuesta";
+  var speech = "";
   
-  var speechResponse = {
-    google: {
-      expectUserResponse: true,
-      richResponse: {
-        items: [
-          {
-            simpleResponse: {
-              textToSpeech: speech
-            }
-          }
-        ]
-      }
-    }
-  };
-  
+  switch (req.body.queryResult.parameters.echoText)
+  {
+    case "10":
+      speech = 'Tiene 10 fact por pagar';
+      break;
+    case "20":
+      speech = 'No Tiene 10 fact por pagar';
+      break;
+  }
   return res.json({
-    payload: speechResponse,
-    //data: speechResponse,
-    fulfillmentText: speech,
-  //  speech: speech,
-   // displayText: speech,
-    //source: "webhook-echo-sample"
+    speech: speech,
+    displayText: speech,
+    source: "webhook-echo-sample"
   });
 });
+
 
 restService.post("/audio", function(req, res) {
   var speech = "";
