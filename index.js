@@ -18,12 +18,14 @@ restService.post("/echo", function(req, res) {
     req.body.queryResult &&
     req.body.queryResult.parameters &&
     req.body.queryResult.parameters.echoText
+    req.body.queryResult.parameters.echoText  
       ? req.body.queryResult.parameters.echoText
+      ? req.body.queryResult.parameters.metodo
       : "";
-  
-
+   
+	
 	switch (speech) {
-	case "123":
+	case "factura":
 		speech = 
 			'Fecha: 4/8/2020, IdFact: 3, Valor: $13,000.00 - https://pagosinteligentes.com/ \n Fecha: 4/20/2020, IdFact: 1, Valor: $120,000.00 - https://pagosinteligentes.com/'
 		break;
@@ -59,3 +61,9 @@ restService.post("/echo", function(req, res) {
 restService.listen(process.env.PORT || 8000, function() {
   console.log("Server up and listening");
 });
+
+function Auto(marca, modelo, annio) {
+  this.marca = marca;
+  this.modelo = modelo;
+  this.annio = annio;
+}
