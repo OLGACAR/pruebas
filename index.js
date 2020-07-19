@@ -23,9 +23,10 @@ restService.post("/echo", function(req, res) {
       ? req.body.queryResult.parameters.metodo
       : "";
    
-	
-	switch (speech) {
-	case "factura":
+    if (speech.contains == "factura")
+    {
+    switch (speech) {
+	case "123":
 		speech = 
 			'Fecha: 4/8/2020, IdFact: 3, Valor: $13,000.00 - https://pagosinteligentes.com/ \n Fecha: 4/20/2020, IdFact: 1, Valor: $120,000.00 - https://pagosinteligentes.com/'
 		break;
@@ -33,6 +34,13 @@ restService.post("/echo", function(req, res) {
 		speech = speech
 		break;
 	}
+}
+		 else
+		 {
+		 speech = 'nnnn'
+		 }
+	
+	
 
 
 
