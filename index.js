@@ -39,26 +39,9 @@ restService.post("/facturas", function(req, res) {
 		speech = 'No tiene facturas pendientes'
 		break;
 	}
-
-
-
-  var speechResponse = {
-    google: {
-      expectUserResponse: true,
-      richResponse: {
-        items: [
-          {
-            simpleResponse: {
-              textToSpeech: speech
-            }
-          }
-        ]
-      }
-    }
-  };
+ 
   
   return res.json({
-    payload: speechResponse,
     fulfillmentText: speech,
   });
 });
