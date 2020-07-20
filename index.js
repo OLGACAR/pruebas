@@ -41,24 +41,8 @@ restService.post("/facturas", function(req, res) {
 	}
 
 
-
-  var speechResponse = {
-    google: {
-      expectUserResponse: true,
-      richResponse: {
-        items: [
-          {
-            simpleResponse: {
-              textToSpeech: speech
-            }
-          }
-        ]
-      }
-    }
-  };
-  
   return res.json({
-    payload: speechResponse,
+   // payload: speechResponse,
     fulfillmentText: speech,
   });
 });
