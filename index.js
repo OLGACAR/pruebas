@@ -42,7 +42,7 @@ restService.post("/facturas", function(req, res) {
 
 
   return res.json({
-   // payload: speechResponse,
+    payload: speechResponse,
     fulfillmentText: speech,
   });
 });
