@@ -17,8 +17,8 @@ restService.post("/facturas", function(req, res) {
   var speech =
     req.body.queryResult &&
     req.body.queryResult.parameters &&
-    req.body.queryResult.parameters.factText
-      ? req.body.queryResult.parameters.factText
+    req.body.queryResult.parameters.idText
+      ? req.body.queryResult.parameters.idText
       : "";
   
 
